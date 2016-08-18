@@ -28,7 +28,7 @@ data0 = i2c.readBytes(0x6A, 0x28, 1)
 data1 = i2c.readBytes(0x6A, 0x29, 1)
 
 # Convert the data
-xGyro = data1 * 256 + data0
+xGyro = data1[0] * 256 + data0[0]
 if xGyro > 32767 :
 	xGyro -= 65536
 
@@ -38,7 +38,7 @@ data0 = i2c.readBytes(0x6A, 0x2A, 1)
 data1 = i2c.readBytes(0x6A, 0x2B, 1)
 
 # Convert the data
-yGyro = data1 * 256 + data0
+yGyro = data1[0] * 256 + data0[0]
 if yGyro > 32767 :
 	yGyro -= 65536
 
@@ -48,7 +48,7 @@ data0 = i2c.readBytes(0x6A, 0x2C, 1)
 data1 = i2c.readBytes(0x6A, 0x2D, 1)
 
 # Convert the data
-zGyro = data1 * 256 + data0
+zGyro = data1[0] * 256 + data0[0]
 if zGyro > 32767 :
 	zGyro -= 65536
 
